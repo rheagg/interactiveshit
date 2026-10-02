@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Boyfriend's Day 💗</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      font-family: "Segoe UI", cursive;
+
+      background:
+        radial-gradient(circle at 20% 20%, #ffd6e7, transparent 30%),
+        radial-gradient(circle at 80% 80%, #ffc1d9, transparent 30%),
+        linear-gradient(135deg, #ffb6d5, #ffe1ec, #ffc7dc);
+    }
+
+    .content {
+      position: relative;
+      z-index: 5;
+    }
+
+    h1 {
+      color: #b51655;
+      font-size: clamp(40px, 8vw, 75px);
+      margin: 0;
+
+      text-shadow: 3px 3px 10px rgba(150, 30, 75, 0.15);
+    }
+
+    p {
+      color: #96345c;
+      font-size: 21px;
+      margin-top: 12px;
+    }
+
+    /* GIFT */
+
+    .gift-button {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .gift {
+      position: relative;
+      width: 150px;
+      height: 120px;
+      margin: auto;
+
+      background: #f05b91;
+      border-radius: 10px;
+
+      box-shadow: 0 15px 30px rgba(160, 30, 80, 0.25);
+
+      transition: 0.3s ease;
+    }
+
+    /* Gift lid */
+    .lid {
+      position: absolute;
+      top: -25px;
+      left: -10px;
+
+      width: 170px;
+      height: 35px;
+
+      background: #e94378;
+      border-radius: 8px;
+
+      transition: 0.3s ease;
+    }
+
+    /* Ribbon */
+    .ribbon-vertical {
+      position: absolute;
+      left: 62px;
+      top: 0;
+
+      width: 25px;
+      height: 120px;
+
+      background: #ffd1df;
+    }
+
+    .ribbon-horizontal {
+      position: absolute;
+      left: 0;
+      top: 45px;
+
+      width: 150px;
+      height: 22px;
+
+      background: #ffd1df;
+    }
+
+    /* Bow */
+    .bow-left,
+    .bow-right {
+      position: absolute;
+      top: -45px;
+      width: 45px;
+      height: 35px;
+      background: #ffd1df;
+      border-radius: 50%;
+    }
+
+    .bow-left {
+      left: 30px;
+      transform: rotate(-25deg);
+    }
+
+    .bow-right {
+      right: 30px;
+      transform: rotate(25deg);
+    }
+
+    /* Hover effect */
+    .gift-button:hover .gift {
+      transform: translateY(-8px) scale(1.05);
+    }
+
+    .gift-button:hover .lid {
+      transform: translateY(-12px) rotate(-3deg);
+    }
+
+    .click-text {
+      margin-top: 25px;
+      color: #b51655;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* Floating hearts */
+
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      font-size: 25px;
+      animation: floatUp 8s linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(.7);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-110vh) scale(1.3);
+        opacity: 0;
+      }
+    }
+
+    .h1 {
+      left: 10%;
+      animation-delay: 1s;
+    }
+
+    .h2 {
+      left: 30%;
+      animation-delay: 3s;
+    }
+
+    .h3 {
+      left: 70%;
+      animation-delay: 0s;
+    }
+
+    .h4 {
+      left: 90%;
+      animation-delay: 4s;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating hearts -->
+  <div class="heart h1">💗</div>
+  <div class="heart h2">💕</div>
+  <div class="heart h3">💖</div>
+  <div class="heart h4">💞</div>
+
+
+  <div class="content">
+
+    <h1>Happy Boyfriend's Day 💗</h1>
+
+    <p> To Mr. Pranish Khanal 💋💗</p> 🥺💕</p>
+
+
+    <!-- CLICKABLE GIFT -->
+    <a href="index.html" class="gift-button">
+
+      <div class="gift">
+
+        <div class="lid"></div>
+
+        <div class="ribbon-vertical"></div>
+
+        <div class="ribbon-horizontal"></div>
+
+        <div class="bow-left"></div>
+        <div class="bow-right"></div>
+
+      </div>
+
+      <div class="click-text">
+        🎁 Tap the gift 🎁
+      </div>
+
+    </a>
+
+  </div>
+
+</body>
+</html>

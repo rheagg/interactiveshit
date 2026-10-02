@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Boyfriend's Day 💗</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      font-family: "Segoe UI", cursive;
+      background:
+        radial-gradient(circle at 20% 20%, #ffd6e7 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #ffc1d9 0%, transparent 30%),
+        linear-gradient(135deg, #ffb6d5, #ffe1ec, #ffc7dc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Soft glowing background */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: glow 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        transform: scale(0.9);
+      }
+      to {
+        transform: scale(1.2);
+      }
+    }
+
+    /* Main card */
+    .card {
+      position: relative;
+      z-index: 10;
+      width: min(90%, 700px);
+      padding: 55px 30px;
+      text-align: center;
+      border-radius: 35px;
+      background: rgba(255, 255, 255, 0.28);
+      border: 2px solid rgba(255, 255, 255, 0.55);
+      box-shadow: 0 20px 60px rgba(170, 40, 90, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .small-heart {
+      font-size: 35px;
+      animation: heartbeat 1.4s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.25);
+      }
+    }
+
+    h1 {
+      margin-top: 15px;
+      color: #b51655;
+      font-size: clamp(35px, 7vw, 65px);
+      line-height: 1.1;
+      text-shadow: 3px 3px 10px rgba(150, 30, 75, 0.15);
+    }
+
+    h2 {
+      margin-top: 18px;
+      color: #d33b73;
+      font-size: clamp(20px, 4vw, 30px);
+      font-weight: 500;
+    }
+
+    .message {
+      margin-top: 25px;
+      color: #8f2855;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .love {
+      margin-top: 25px;
+      font-size: 32px;
+      letter-spacing: 8px;
+    }
+
+    /* Balloons */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 55px;
+      height: 70px;
+      border-radius: 50% 50% 45% 45%;
+      z-index: 5;
+      animation: floatUp linear infinite;
+    }
+
+    .balloon::before {
+      content: "";
+      position: absolute;
+      bottom: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 10px solid currentColor;
+    }
+
+    .balloon::after {
+      content: "";
+      position: absolute;
+      top: 68px;
+      left: 50%;
+      width: 1px;
+      height: 100px;
+      background: rgba(100, 40, 60, 0.4);
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(-5deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(-55vh) rotate(6deg);
+      }
+
+      100% {
+        transform: translateY(-125vh) rotate(-7deg);
+        opacity: 0;
+      }
+    }
+
+    /* Individual balloons */
+    .b1 {
+      left: 5%;
+      background: #ff5f91;
+      color: #ff5f91;
+      animation-duration: 9s;
+    }
+
+    .b2 {
+      left: 15%;
+      background: #ff9fc2;
+      color: #ff9fc2;
+      animation-duration: 12s;
+      animation-delay: 2s;
+    }
+
+    .b3 {
+      left: 27%;
+      background: #e94378;
+      color: #e94378;
+      animation-duration: 10s;
+      animation-delay: 4s;
+    }
+
+    .b4 {
+      left: 42%;
+      background: #ff7eaa;
+      color: #ff7eaa;
+      animation-duration: 13s;
+      animation-delay: 1s;
+    }
+
+    .b5 {
+      left: 57%;
+      background: #ffb0cd;
+      color: #ffb0cd;
+      animation-duration: 11s;
+      animation-delay: 3s;
+    }
+
+    .b6 {
+      left: 70%;
+      background: #f34d85;
+      color: #f34d85;
+      animation-duration: 9s;
+      animation-delay: 5s;
+    }
+
+    .b7 {
+      left: 83%;
+      background: #ff91b8;
+      color: #ff91b8;
+      animation-duration: 12s;
+      animation-delay: 2s;
+    }
+
+    .b8 {
+      left: 93%;
+      background: #db356d;
+      color: #db356d;
+      animation-duration: 10s;
+      animation-delay: 6s;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      color: rgba(210, 35, 100, 0.6);
+      font-size: 25px;
+      animation: heartsUp 8s linear infinite;
+      z-index: 2;
+    }
+
+    @keyframes heartsUp {
+      0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-110vh) scale(1.4);
+        opacity: 0;
+      }
+    }
+
+    .heart:nth-child(1) {
+      left: 10%;
+      animation-delay: 1s;
+    }
+
+    .heart:nth-child(2) {
+      left: 35%;
+      animation-delay: 3s;
+    }
+
+    .heart:nth-child(3) {
+      left: 65%;
+      animation-delay: 0s;
+    }
+
+    .heart:nth-child(4) {
+      left: 90%;
+      animation-delay: 4s;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .card {
+        padding: 40px 20px;
+      }
+
+      .message {
+        font-size: 16px;
+      }
+
+      .balloon {
+        width: 42px;
+        height: 55px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating balloons -->
+  <div class="balloon b1"></div>
+  <div class="balloon b2"></div>
+  <div class="balloon b3"></div>
+  <div class="balloon b4"></div>
+  <div class="balloon b5"></div>
+  <div class="balloon b6"></div>
+  <div class="balloon b7"></div>
+  <div class="balloon b8"></div>
+
+  <!-- Floating hearts -->
+  <div class="heart">♥</div>
+  <div class="heart">♡</div>
+  <div class="heart">♥</div>
+  <div class="heart">♡</div>
+
+  <!-- Main message -->
+  <div class="card">
+    <div class="small-heart">💗</div>
+
+    <h1>Happy Boyfriend's Day</h1>
+
+    <h2>to my sweetest ssaanuu eveeerrrr 🥺💕</h2>
+
+    <p class="message">
+      This message is from Riya to my Pranu,<br>
+      My life has been greater since we got together. I could never imagine what would
+      i have done without youuu by my side.<br> Vanera saddai xainw tesaile i waana hold u up close
+      any say how mucch u matter to mee!!!
+      I LOVE YOU SOOOOO MUCCCCCH MWAAAH💕
+    </p>
+<br><br>
+    <div class="love">
+      🎀 💗 🫶🏻 💕 🎀
+    </div>
+
+<a href="video.html">
+<button>💌 A Surprise For You 💌</button>
+
+</body>
+</html>
